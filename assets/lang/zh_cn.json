@@ -1,3 +1,4 @@
 {
-    "help.add": "添加模组至索引。"
+    "help.add": "添加模组至索引。",
+    "help.version": "显示版本。"
 }
