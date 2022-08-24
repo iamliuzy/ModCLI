@@ -8,8 +8,3 @@ class Mod:
     version: str
     update_url: str
     website_id: dict
-
-
-class ModAPI:
-    def add_mod(path: pathlib.Path):
-        
