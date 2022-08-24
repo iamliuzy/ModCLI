@@ -12,6 +12,7 @@ class Lang:
         self.lang_translate = json
 
     def translate(self, keyword: str):
+        self.__init__(self)
         try:
             return self.lang_translate[keyword]
         except KeyError:
