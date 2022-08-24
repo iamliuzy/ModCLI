@@ -1,0 +1,2 @@
+NAME = "ModCLI"
+VERSION = "prerelease"
