@@ -3,7 +3,7 @@ import argparse
 import lang
 
 
-class CMOD:
+class ModCLI:
     lang_parse = lang.Lang()
     def argparster(self):
         parser = argparse.ArgumentParser()
@@ -16,4 +16,4 @@ class CMOD:
 
 
 if __name__ == '__main__':
-    CMOD()
+    ModCLI()
