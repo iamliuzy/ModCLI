@@ -2,26 +2,26 @@ from pathlib import Path
 from pykson import Pykson
 
 def _open(path:Path):
-    path = path.resolve()
+    path = Path(path).resolve()
     file = open(path, "r", encoding="utf-8")
     content = file.read()
     file.close()
     return content
 
 def _write(path:Path, content:str):
-    path = path.resolve()
+    path = Path(path).resolve()
     file = open(path, "w", encoding="utf-8")
     file.write(content)
     file.close()
 
 def json_to_object(json:str, pojo):
-    return Pykson.from_json(json, pojo)
+    return Pykson.from_json(Pykson(), json, pojo)
 
 def file_to_object(json:Path, pojo):
     return json_to_object(_open(json), pojo)
 
 def object_to_json(pojo):
-    return Pykson.to_json(pojo)
+    return Pykson.to_json(Pykson(), pojo)
 
 def object_to_file(json:Path, pojo):
     _write(json, object_to_json(pojo))
