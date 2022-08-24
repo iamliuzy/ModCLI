@@ -6,9 +6,9 @@ class Lang:
     def __init__(self):
         lang = locale.getdefaultlocale()[0]
         try:
-            json = jsonparse.Json(path=".\\assets\\lang\\" + lang + ".json").parse()
+            json = jsonparse.file_to_dict(".\\assets\\lang\\{lang}.json".format(lang=lang))
         except FileNotFoundError:
-            json = jsonparse.Json(path=".\\assets\\lang\\default.json").parse()
+            json = jsonparse.file_to_dict(".\\assets\\lang\\en_us.json")
         self.lang_translate = json
 
     def translate(self, keyword: str):
