@@ -43,4 +43,4 @@ $ modcli -searchTag "标签"
 
 如果您有任何问题或想法，可以在[Discussions页面](https://github.com/iamliuzy/ModCLI/discussions)讨论。
 
-如果程序崩溃或输出任何错误，请在[Issue](https://github.com/iamliuzy/ModCLI/issues)页面报告。
+如果程序崩溃或输出任何错误，请在[Issue页面](https://github.com/iamliuzy/ModCLI/issues)报告。
