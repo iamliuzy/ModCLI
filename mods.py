@@ -1,7 +1,4 @@
 import pathlib
-import time
-from unittest import loader
-import zipapp
 import jsonparse
 import zipfile
 import tempfile
