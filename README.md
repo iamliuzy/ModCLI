@@ -14,8 +14,8 @@
 
 ## 安装
 
-您可以通过msi包或zip存档安装 ModCLI。
-可以在Release页面找到它们。
+您可以通过zip存档安装 ModCLI。
+可以在Release页面找到。
 
 
     
