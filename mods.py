@@ -25,14 +25,15 @@ class Mod:
             except KeyError:
                 try:
                     extracted = self.file.extract("mcmod.info", tempdir)
-                    self.metadata = jsonparse.file_to_list(extracted)
+                    self.metadata = jsonparse.QuickAccess.json_to_list(extracted)
                     self.loader = 0
                 except KeyError:
                     extracted = self.file.extract("fabric.mod.json", tempdir)
-                    self.metadata = jsonparse.file_to_dict(extracted)
+                    self.metadata = jsonparse.QuickAccess.json_to_dict(extracted)
                     self.loader = 3
             print(self.loader)
             print(self.metadata)
+            print(type(self.metadata))
 
-if __name__ == "__main__":
-    Mod("E:\\my\\.minecraft\\.mods.shaders.respacks\\mods\\1.7\\NGTLib1.7.10.32_Forge10.13.4.1558.jar")
+
+Mod(".\\test_resources\\NGTLib1.7.10.32_Forge10.13.4.1558.jar")
