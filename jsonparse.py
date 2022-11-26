@@ -1,39 +1,52 @@
-from pathlib import Path
-from pykson import Pykson
+from pathlib import PurePath
+import json
 
-def _open(path:Path):
-    path = Path(path).resolve()
-    file = open(path, "r", encoding="utf-8")
-    content = file.read()
-    file.close()
-    return content
+class JsonFile:
+    def __init__(self, path: PurePath, filetype: str) -> None:
+        self.file = open(path, "r+", encoding="utf-8")
+        self.text = self.file.read()
+        if filetype == "list":
+            self.obj = list(json.loads(self.text))
+        elif filetype == "dict":
+            self.obj = dict(json.loads(self.text))
+        else:
+            raise Exception("Unkdown json file type: " + filetype + ".")
 
-def _write(path:Path, content:str):
-    path = Path(path).resolve()
-    file = open(path, "w", encoding="utf-8")
-    file.write(content)
-    file.close()
+    def __init__(self, path: PurePath) -> None:
+        file = open(path, "r", encoding="utf-8")
+        try:
+            if file.read().startswith("{"):
+                self.__init__(path, "dict")
+            elif file.read().startswith("["):
+                self.__init__(path, "list")
+            else:
+                raise Exception("Unkdown json file type: " + path + ".")
+        finally:
+            file.close()
 
-def json_to_object(json:str, pojo):
-    return Pykson.from_json(Pykson(), json, pojo)
+    
+    def edit(self, new: list | dict) -> None:
+        self.obj = new
+        self.text = str(new)
+    
+    def get(self) -> dict | list:
+        return self.obj
 
-def file_to_object(json:Path, pojo):
-    return json_to_object(_open(json), pojo)
+    def store(self) -> None:
+        self.file.close()
 
-def object_to_json(pojo):
-    return Pykson.to_json(Pykson(), pojo)
 
-def object_to_file(json:Path, pojo):
-    _write(json, object_to_json(pojo))
+class QuickAccess:
+    @classmethod
+    def json_to_dict(path) -> dict:
+        f = JsonFile(path)
+        c = f.get()
+        f.store()
+        return c
 
-def json_to_dict(json:str):
-    return json_to_object(json, dict)
-
-def file_to_dict(json:Path):
-    return file_to_object(json, dict)
-
-def json_to_list(json:str):
-    return json_to_object(json, list)
-
-def file_to_list(json:Path):
-    return file_to_object(json, list)
+    @classmethod
+    def json_to_list(path) -> list:
+        f = JsonFile(path)
+        c = f.get()
+        f.store()
+        return c
