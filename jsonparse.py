@@ -2,7 +2,18 @@ from pathlib import PurePath
 import json
 
 class JsonFile:
-    def __init__(self, path: PurePath, filetype: str) -> None:
+    def __init__(self, path: PurePath, filetype="") -> None:
+        if filetype == "":
+            f = open(path, "r", encoding="utf-8")
+            try:
+                if f.read().startswith("{"):
+                    filetype = "dict"
+                elif f.read().startswith("["):
+                    filetype = list
+                else:
+                    raise Exception("Unkdown json file type: " + path + ".")
+            finally:
+                f.close()
         self.file = open(path, "r+", encoding="utf-8")
         self.text = self.file.read()
         if filetype == "list":
@@ -11,19 +22,6 @@ class JsonFile:
             self.obj = dict(json.loads(self.text))
         else:
             raise Exception("Unkdown json file type: " + filetype + ".")
-
-    def __init__(self, path: PurePath) -> None:
-        file = open(path, "r", encoding="utf-8")
-        try:
-            if file.read().startswith("{"):
-                self.__init__(path, "dict")
-            elif file.read().startswith("["):
-                self.__init__(path, "list")
-            else:
-                raise Exception("Unkdown json file type: " + path + ".")
-        finally:
-            file.close()
-
     
     def edit(self, new: list | dict) -> None:
         self.obj = new
@@ -37,16 +35,16 @@ class JsonFile:
 
 
 class QuickAccess:
-    @classmethod
+    @staticmethod
     def json_to_dict(path) -> dict:
-        f = JsonFile(path)
+        f = JsonFile(path, "dict")
         c = f.get()
         f.store()
         return c
 
-    @classmethod
+    @staticmethod
     def json_to_list(path) -> list:
-        f = JsonFile(path)
+        f = JsonFile(path, "list")
         c = f.get()
         f.store()
         return c
