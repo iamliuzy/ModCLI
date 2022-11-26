@@ -1,6 +1,7 @@
 from pathlib import PurePath
 import json
 
+
 class JsonFile:
     def __init__(self, path: PurePath, filetype="") -> None:
         if filetype == "":
@@ -22,11 +23,11 @@ class JsonFile:
             self.obj = dict(json.loads(self.text))
         else:
             raise Exception("Unkdown json file type: " + filetype + ".")
-    
+
     def edit(self, new: list | dict) -> None:
         self.obj = new
         self.text = str(new)
-    
+
     def get(self) -> dict | list:
         return self.obj
 

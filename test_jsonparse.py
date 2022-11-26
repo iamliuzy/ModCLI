@@ -1,6 +1,7 @@
-from jsonparse import *
+import jsonparse
 import pytest
+
 
 def test_test():
     with pytest.raises(FileNotFoundError):
-        JsonFile("C:\\a.txt")
+        jsonparse.JsonFile("C:\\a.txt")

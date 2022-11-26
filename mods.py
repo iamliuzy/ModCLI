@@ -6,7 +6,7 @@ import toml
 
 
 class Mod:
-    name:str
+    name: str
     id: str
     loader: int
     path: pathlib.Path
@@ -14,7 +14,7 @@ class Mod:
     update_url: str
     website_id: dict
 
-    def __init__(self, path:pathlib.Path):
+    def __init__(self, path:pathlib.Path): 
         self.path = pathlib.Path(path).resolve()
         self.file = zipfile.ZipFile(self.path, mode="r")
         with tempfile.TemporaryDirectory() as tempdir:
