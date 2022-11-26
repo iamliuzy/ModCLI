@@ -34,6 +34,3 @@ class Mod:
             print(self.loader)
             print(self.metadata)
             print(type(self.metadata))
-
-
-Mod(".\\test_resources\\NGTLib1.7.10.32_Forge10.13.4.1558.jar")
