@@ -12,20 +12,6 @@
 - 使用搜索功能快速找到模组。
 
 
-## 安装
-
-目前仅能自行下载源代码运行：
-在安装Python的情况下，运行：
-```
-pip install -r requirements.txt
-```
-以安装依赖（可能有点慢，建议科学上网），并运行：
-```
-python main.py
-```
-以运行程序。
-
-    
 ## 计划功能示例
 
 将 mod 添加到库：
@@ -40,6 +26,22 @@ $ modcli -searchName "ModName"
 ```
 $ modcli -searchTag "标签"
 ```
+
+
+## 安装
+
+目前仅能自行下载源代码运行：
+在安装Python的情况下，运行：
+```
+pip install -r requirements.txt
+```
+以安装依赖（可能有点慢，建议科学上网），并运行：
+```
+python main.py
+```
+以运行程序。
+
+
 
 
 ## 贡献者
