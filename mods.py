@@ -6,14 +6,6 @@ import toml
 
 
 class Mod:
-    name: str
-    id: str
-    loader: int
-    path: pathlib.Path
-    version: str
-    update_url: str
-    website_id: dict
-
     def __init__(self, path: pathlib.Path):
         self.path = pathlib.Path(path).resolve()
         self.file = zipfile.ZipFile(self.path, mode="r")
@@ -31,6 +23,15 @@ class Mod:
                     extracted = self.file.extract("fabric.mod.json", tempdir)
                     self.metadata = jsonparse.QuickAccess.json_to_dict(extracted)
                     self.loader = 3
-            print(self.loader)
+        if self.loader == 1:
             print(self.metadata)
-            print(type(self.metadata))
+            self.name = str(self.metadata["mods"][0]["displayName"])
+            self.id = str(self.metadata["mods"][0]["modId"])
+            self.dependencies = list(self.metadata["dependencies"][self.id])
+            self.version = str(self.metadata["mods"][0]["version"])
+            self.url = str(self.metadata["mods"][0]["displayURL"])
+            self.issue_url = str(self.metadata["issueTrackerURL"])
+            self.description = str(self.metadata["mods"][0]["description"])
+            for i in dir(self):
+                if i[0] != "_":
+                    print(getattr(self, i))
