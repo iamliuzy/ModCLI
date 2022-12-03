@@ -19,7 +19,7 @@ class ModCLI:
 
     def __init__(self):
         self.argparster()
-        if not self.args["add"] == None:
+        if not self.args["add"] is None:
             mods.Mod(self.args["add"])
 
 
