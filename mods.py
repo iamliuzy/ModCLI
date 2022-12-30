@@ -8,6 +8,18 @@ import constants
 
 
 class Mod:
+    """
+    Object for a Minecraft Mod.
+    About attribute "loader":
+    | Loader     | No. |
+    |------------|-----|
+    | Forge(old) | 0   |
+    | Forge(new) | 1   |
+    | Fabric     | 2   |
+
+    :param path: File path of mod file.
+    """
+
     def __init__(self, path: pathlib.Path):
         self.path = pathlib.Path(path).resolve()
         self.file = zipfile.ZipFile(self.path, mode="r")
@@ -20,11 +32,11 @@ class Mod:
                 try:
                     extracted = self.file.extract("mcmod.info", tempdir)
                     self.metadata = jsonparse.QuickAccess.json_to_list(extracted)
-                    self.loader = 0
+                    self.loader = 0  # Forge old loader
                 except KeyError:
                     extracted = self.file.extract("fabric.mod.json", tempdir)
                     self.metadata = jsonparse.QuickAccess.json_to_dict(extracted)
-                    self.loader = 3
+                    self.loader = 2  # Fabric loader
         if self.loader == 1:
             try:
                 self.name = str(self.metadata["mods"][0]["displayName"])
