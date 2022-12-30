@@ -3,6 +3,8 @@ import jsonparse
 import zipfile
 import tempfile
 import toml
+import log
+import constants
 
 
 class Mod:
@@ -24,14 +26,17 @@ class Mod:
                     self.metadata = jsonparse.QuickAccess.json_to_dict(extracted)
                     self.loader = 3
         if self.loader == 1:
-            print(self.metadata)
-            self.name = str(self.metadata["mods"][0]["displayName"])
-            self.id = str(self.metadata["mods"][0]["modId"])
-            self.dependencies = list(self.metadata["dependencies"][self.id])
-            self.version = str(self.metadata["mods"][0]["version"])
-            self.url = str(self.metadata["mods"][0]["displayURL"])
-            self.issue_url = str(self.metadata["issueTrackerURL"])
-            self.description = str(self.metadata["mods"][0]["description"])
+            try:
+                self.name = str(self.metadata["mods"][0]["displayName"])
+                self.id = str(self.metadata["mods"][0]["modId"])
+                self.dependencies = list(self.metadata["dependencies"][self.id])
+                self.version = str(self.metadata["mods"][0]["version"])
+                self.url = str(self.metadata["mods"][0]["displayURL"])
+                self.issue_url = str(self.metadata["issueTrackerURL"])
+                self.description = str(self.metadata["mods"][0]["description"])
+            except KeyError as e:
+                log.warn(str(e) + ' key does not exist in the manifest file of mod "' + str(self.path) + '".')
+            log.debug(str(constants.DEBUG))
             for i in dir(self):
                 if i[0] != "_":
                     print(getattr(self, i))
