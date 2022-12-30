@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d687216-d5f6-4cd8-a288-1e64511febb9" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mods.py" beforeDir="false" afterPath="$PROJECT_DIR$/mods.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
