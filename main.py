@@ -23,5 +23,4 @@ class ModCLI:
             mods.Mod(self.args["add"])
 
 
-if __name__ == '__main__':
-    ModCLI()
+ModCLI()
