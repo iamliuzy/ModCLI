@@ -39,4 +39,4 @@ class Mod:
             log.debug(str(constants.DEBUG))
             for i in dir(self):
                 if i[0] != "_":
-                    print(getattr(self, i))
+                    log.debug(i + "::" + str(getattr(self, i)))
