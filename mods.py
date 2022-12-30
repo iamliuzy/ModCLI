@@ -27,7 +27,7 @@ class Mod:
             try:
                 extracted = self.file.extract("META-INF/mods.toml", tempdir)
                 self.metadata = toml.load(extracted)
-                self.loader = 1
+                self.loader = 1  # Forge new loader
             except KeyError:
                 try:
                     extracted = self.file.extract("mcmod.info", tempdir)
