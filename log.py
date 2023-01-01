@@ -1,6 +1,8 @@
 import datetime
+from os import linesep
 
-import constants
+logfile = open("latest.log", mode="w", encoding="utf-8")
+debug_logfile = open("latest_debug.log", mode="w", encoding="utf-8")
 
 
 class LogLevel:
@@ -13,15 +15,19 @@ class LogLevel:
 
 def log(s: str, source="", level=LogLevel.info):
     time = datetime.datetime.today().strftime("%c")
-    print("[", time, "]", "(", level, ")", end="", sep="")
+    result = ""
+    result = result + "[" + time + "]" + "(" + level + ")"
     if source != "":
-        print("{", source, "}", end="", sep="")
-    print(" " + s)
+        result = result + "{" + source + "}"
+    result = result + " " + s
+    if not level == LogLevel.debug:
+        print(result)
+    logfile.write(result + linesep)
+    debug_logfile.write(result + linesep)
 
 
 def debug(s: str, source=""):
-    if constants.DEBUG:
-        log(s, source, LogLevel.debug)
+    log(s, source, LogLevel.debug)
 
 
 def info(s: str, source=""):
