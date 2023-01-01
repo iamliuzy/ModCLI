@@ -7,10 +7,6 @@ assignees: ''
 
 ---
 
-# 日志
-
-请附上日志
-
 # 错误复现
 
 如果你能复现这个错误，请在下方详细列出复现步骤
@@ -20,4 +16,4 @@ assignees: ''
 
 # 日志
 
-请在附件中上传程序文件夹下的latest.log以及latest_debug.log
+请在附件中上传程序文件夹下的latest.log以及latest_debug.log，并将命令行输出附上。
