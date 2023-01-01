@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d687216-d5f6-4cd8-a288-1e64511febb9" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/mods.py" beforeDir="false" afterPath="$PROJECT_DIR$/mods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/log.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,9 +96,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Run" />
-      <item itemvalue="Python.Debug" />
       <item itemvalue="Python.Debug (1)" />
+      <item itemvalue="Python.Debug" />
+      <item itemvalue="Python.Run" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
