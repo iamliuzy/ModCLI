@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d687216-d5f6-4cd8-a288-1e64511febb9" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/log.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,13 +22,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/main.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.Debug (1)">
-    <configuration name="Debug (1)" type="PythonConfigurationType" factoryName="Python">
+  <component name="RunManager" selected="Python.Debug (run with test resources!)">
+    <configuration name="Debug (run with test resources!)" type="PythonConfigurationType" factoryName="Python">
       <module name="ModCLI" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -44,7 +43,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="-add &quot;E:\my\.minecraft\.mods.shaders.respacks\mods\1.18.2\Create\create-1.18.2-0.5.0.e.jar&quot;" />
+      <option name="PARAMETERS" value="-add &quot;.\assets\test_resources\create-1.18.2-0.5.0.e.jar&quot;" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -96,7 +95,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Debug (1)" />
+      <item itemvalue="Python.Debug (run with test resources!)" />
       <item itemvalue="Python.Debug" />
       <item itemvalue="Python.Run" />
     </list>
