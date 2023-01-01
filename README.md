@@ -1,5 +1,7 @@
 # ModCLI
 
+English | [简体中文](https://github.com/iamliuzy/ModCLI/blob/main/README_ZH_CN.md)
+
 A command-line tool to manage Minecraft mods
 
 This program is currently still in development.
