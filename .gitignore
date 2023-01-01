@@ -132,3 +132,6 @@ test.json
 # Log file
 latest.log
 latest_debug.log
+
+# IDEA and PyCharm project file
+.idea/
