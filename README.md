@@ -1,56 +1,58 @@
 # ModCLI
 
-管理 Minecraft 模组的命令行工具
+English | [简体中文](https://github.com/iamliuzy/ModCLI/blob/main/README_ZH_CN.md)
 
-本程序目前还在开发状态。
+A command-line tool to manage Minecraft mods
 
-
-
-## 计划功能
-
-- 通过几个命令轻松管理您的模组。
-- 使用搜索功能快速找到模组。
+This program is currently still in development.
 
 
-### 示例
 
-将 mod 添加到库：
+## Planning functions
+
+- Easily manage your mods with a few commands.
+- Use the search function to quickly find mods.
+
+
+### Example
+
+Add the mod to the library:
 ```
-$ modcli -add "\\path\\to\\mod\\mod.jar"
+$ modcli -add "\path\to\mod\mod.jar"
 ```
-按名称在库中搜索 mod：
+Search the library for mods by name:
 ```
 $ modcli -searchName "ModName"
 ```
-或按标签搜索：
+or search by tag:
 ```
-$ modcli -searchTag "标签"
+$ modcli -searchTag "Tag"
 ```
 
 
-## 安装
+## Install
 
-目前仅能自行下载源代码运行：
-在安装Python的情况下，运行：
+Now, you can only download the source code and run it yourself:
+With Python installed, run:
 ```
 pip install -r requirements.txt
 ```
-以安装依赖（可能有点慢，建议科学上网），并运行：
+To install dependencies (may be a bit slow, it is recommended to go online scientifically), and run:
 ```
 python main.py
 ```
-以运行程序。
+to run the program.
 
 
 
 
-## 贡献者
+## Contributors
 
 - [@iamliuzy](https://www.github.com/iamliuzy)
 
 
-## 链接
+## Link
 
-如果您有任何问题或想法，可以在[Discussions页面](https://github.com/iamliuzy/ModCLI/discussions)讨论。
+If you have any questions or ideas, you can discuss them on the [Discussions page](https://github.com/iamliuzy/ModCLI/discussions).
 
-如果程序崩溃，请在[Issue页面](https://github.com/iamliuzy/ModCLI/issues)报告。
+If the program crashes, please report it on the [Issue page](https://github.com/iamliuzy/ModCLI/issues).
