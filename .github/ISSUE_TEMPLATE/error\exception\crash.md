@@ -18,6 +18,6 @@ assignees: ''
 1.
 2.
 
-# 截图
+# 日志
 
-如果没有崩溃，请附上报错提示框的截图。
+请在附件中上传程序文件夹下的latest.log以及latest_debug.log
